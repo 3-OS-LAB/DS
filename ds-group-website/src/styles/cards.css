@@ -1,0 +1,81 @@
+.card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-premium {
+  background: linear-gradient(
+      to bottom,
+      white,
+      #fafafa
+  );
+
+  border-radius: var(--radius-xl);
+
+  border: 1px solid rgba(0,0,0,.05);
+
+  box-shadow: var(--shadow-soft);
+
+  transition: all .35s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    var(--shadow-large),
+    var(--shadow-gold);
+}
+
+.card-dark {
+  background: var(--color-dark);
+
+  color: white;
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.card-dark h1,
+.card-dark h2,
+.card-dark h3,
+.card-dark h4 {
+  color: white;
+}
+
+.card-dark p {
+  color: rgba(255,255,255,.75);
+}
+
+/* Glass */
+
+.glass {
+  background: rgba(255,255,255,.65);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.45);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.glass-dark {
+  background: rgba(10,10,10,.55);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.08);
+}

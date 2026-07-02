@@ -1,0 +1,80 @@
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.bg-dark {
+  background: var(--color-dark);
+}
+
+.rounded-premium {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-ultra {
+  border-radius: var(--radius-2xl);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.shadow-large {
+  box-shadow: var(--shadow-large);
+}
+
+.shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+.transition-premium {
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease,
+    background .35s ease,
+    color .35s ease;
+}
+
+.hover-lift {
+  transition: transform .35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.hover-scale {
+  transition: transform .35s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+.gold-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold),
+    var(--color-gold-dark)
+  );
+}
+
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold),
+    #ffd56b
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
