@@ -29,17 +29,13 @@ export function CursorProvider({
 
   const [hovered, setHovered] = useState(false);
 
-  const [isTouchDevice, setTouchDevice] =
-    useState(false);
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window ||
+      navigator.maxTouchPoints > 0);
 
   useEffect(() => {
-    const touch =
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0;
-
-    setTouchDevice(touch);
-
-    if (touch) return;
+    if (isTouchDevice) return;
 
     const move = (e: MouseEvent) => {
       setX(e.clientX);
@@ -53,7 +49,7 @@ export function CursorProvider({
         "mousemove",
         move
       );
-  }, []);
+  }, [isTouchDevice]);
 
   const value = useMemo(
     () => ({
