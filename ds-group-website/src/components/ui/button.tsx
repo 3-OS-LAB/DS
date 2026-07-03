@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import { HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -55,10 +55,14 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<HTMLMotionProps<"button">, "children">,
     VariantProps<typeof buttonVariants> {
+  children?: React.ReactNode;
+
   loading?: boolean;
+
   leftIcon?: React.ReactNode;
+
   rightIcon?: React.ReactNode;
 }
 

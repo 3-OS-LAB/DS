@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import { ElementType } from "react";
 import { cn } from "@/lib/utils";
 
 const sectionVariants = cva("relative w-full overflow-hidden", {
@@ -35,7 +35,7 @@ const containerVariants = cva(
 
 type SectionElement = HTMLElement;
 
-type AsElement = keyof JSX.IntrinsicElements;
+type AsElement = ElementType;
 
 export interface SectionProps
   extends VariantProps<typeof sectionVariants> {
@@ -66,8 +66,7 @@ const Section = React.forwardRef<SectionElement, SectionProps>(
     },
     ref
   ) => {
-    const Component = as;
-
+    const Component = as as ElementType;
     return (
       <Component
         ref={ref as never}
