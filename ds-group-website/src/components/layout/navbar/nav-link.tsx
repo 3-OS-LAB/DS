@@ -1,18 +1,18 @@
 "use client";
-import { navigation } from "./navigation";
-import type { NavItem } from "./types";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 interface NavLinkProps {
+  title: string;
   href: string;
-  label: string;
 }
 
 export default function NavLink({
+  title,
   href,
-  label,
 }: NavLinkProps) {
   const pathname = usePathname();
 
@@ -24,16 +24,19 @@ export default function NavLink({
     <Link
       href={href}
       className={cn(
-        "relative px-2 py-1 text-sm font-medium transition-colors",
+        "relative px-1 py-2 text-sm font-medium transition-colors",
         active
           ? "text-[#D4AF37]"
           : "text-white hover:text-[#D4AF37]"
       )}
     >
-      {label}
+      {title}
 
       {active && (
-        <span className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-[#D4AF37]" />
+        <motion.span
+          layoutId="navbar-indicator"
+          className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-[#D4AF37]"
+        />
       )}
     </Link>
   );
